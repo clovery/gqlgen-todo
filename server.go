@@ -7,6 +7,8 @@ import (
 	"net/http"
 	"os"
 
+	model "gqlgen-todo/internal/model"
+
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
 )
@@ -18,6 +20,8 @@ func main() {
 	if port == "" {
 		port = defaultPort
 	}
+
+	model.Init()
 
 	srv := handler.NewDefaultServer(generated.NewExecutableSchema(generated.Config{Resolvers: &graph.Resolver{}}))
 
