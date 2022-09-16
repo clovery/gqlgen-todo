@@ -4,10 +4,14 @@ package model
 
 type NewTodo struct {
 	Text   string `json:"text"`
-	UserID string `json:"userId"`
+	UserID int    `json:"userId"`
+}
+
+type NewUser struct {
+	Name string `json:"name"`
 }
 
 type User struct {
-	ID   string `json:"id"`
+	ID   int    `json:"id" gorm:"primarykey"`
 	Name string `json:"name"`
 }

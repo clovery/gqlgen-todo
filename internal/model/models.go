@@ -10,3 +10,8 @@ type Todo struct {
 	UserID    int       `json:"user_id"`
 	CreatedAt time.Time `json:"created_at"`
 }
+
+// type User struct {
+// 	ID   int    `json:"id" gorm:"primarykey"`
+// 	Name string `json:"name"`
+// }
